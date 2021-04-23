@@ -72,7 +72,8 @@ class AbstractLocalOfficeTaskTest {
 
       final FooOfficeTask task = new FooOfficeTask(new DocSourceSpecs(SOURCE_FILE));
       assertThat(task.getLoadProperties())
-          .hasSize(3)
+          .hasSize(4)
+          .containsKey("InteractionHandler")
           .contains(
               entry("Hidden", true),
               entry("ReadOnly", true),
@@ -94,7 +95,8 @@ class AbstractLocalOfficeTaskTest {
 
       final FooOfficeTask task = new FooOfficeTask(new NullSourceSpecs(SOURCE_FILE));
       assertThat(task.getLoadProperties())
-          .hasSize(3)
+          .hasSize(4)
+          .containsKey("InteractionHandler")
           .contains(
               entry("Hidden", true),
               entry("ReadOnly", true),
@@ -116,7 +118,8 @@ class AbstractLocalOfficeTaskTest {
 
       final FooOfficeTask task = new FooOfficeTask(new TxtSourceSpecs(SOURCE_FILE));
       assertThat(task.getLoadProperties())
-          .hasSize(5)
+          .hasSize(6)
+          .containsKey("InteractionHandler")
           .contains(
               entry("Hidden", true),
               entry("ReadOnly", true),
